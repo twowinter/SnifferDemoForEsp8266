@@ -214,6 +214,8 @@ sniffer_wifi_scan_done(void *arg, STATUS status)
 
 				os_printf("ssid %s, channel %d, authmode %d, rssi %d\n",
 						bss->ssid, bss->channel, bss->authmode, bss->rssi);
+				os_printf("mac %2x%2x%2x%2x%2x%2x\n",
+						bss->bssid[0],bss->bssid[1],bss->bssid[2],bss->bssid[3],bss->bssid[4],bss->bssid[5]);
 				channel_bits |= 1 << (bss->channel);
 
 				info = (struct router_info *)os_zalloc(sizeof(struct router_info));
